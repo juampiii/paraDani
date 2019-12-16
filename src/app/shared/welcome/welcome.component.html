@@ -1,0 +1,9 @@
+<div class="welcome" [ngClass]="{'pair': EsPar(), 'odd':!EsPar()}">
+  <p *ngIf="customerNameAfterRefreshing != null"> {{number}} Bienvenido a nuestra tienda {{title}}, {{customerNameAfterRefreshing}}</p>
+  <p *ngIf="customerNameAfterRefreshing == null">{{number}} Inserta tu nombre</p>
+  <div class="form-group col-md-6">
+<input name="name" type="text" class="form-control form-control-lg" [(ngModel)]="customerName">
+
+  <button class="btn btn-info" (click)="RefreshCustomerName(customerName)">Actualizar</button>
+</div>
+</div>
