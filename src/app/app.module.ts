@@ -1,24 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule, routedComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './shared/welcome/welcome.component';
 import {FormsModule} from '@angular/forms';
 import {ProductboxComponent} from "./shared/productbox/productbox.component";
+import {ShoppingCartService} from "./shared/shoppingcart/shoppingcart.service";
+import {ShoppingCartComponent} from "./shared/shoppingcart/shoppingcart.component";
+import {ProductRepositoryService} from "./productRepository/productrepository.service";
+import {AngularFontAwesomeModule} from "angular-font-awesome";
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    ProductboxComponent
+    ProductboxComponent,
+    ShoppingCartComponent,
+    routedComponents,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    ShoppingCartService,
+    ProductRepositoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

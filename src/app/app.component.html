@@ -1,7 +1,20 @@
 <div class="app">
-  <h1>{{title}}</h1>
+  <div class="container mb-5 mt-5">
+    <div class="row">
+      <div class="col-10">
+        <a [routerLink]="['/']"><h1>{{title}}</h1></a>
+        <a [routerLink]="['/checkout']"><h1>Checkout</h1></a>
 
-  <span *ngFor="let num of products">
-  <welcome [number]="num"></welcome>
-    </span>
+
+      </div>
+      <div class="col-2" #shoppingcartcontainer>
+        <shoppingcart #shoppingcart></shoppingcart>
+      </div>
+    </div>
+
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </div>
