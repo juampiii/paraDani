@@ -10,6 +10,7 @@ import {ShoppingCartComponent} from "./shared/shoppingcart/shoppingcart.componen
 import {ProductRepositoryService} from "./productRepository/productrepository.service";
 import {AngularFontAwesomeModule} from "angular-font-awesome";
 import { CheckoutComponent } from './checkout/checkout.component';
+import {CustomerService} from "./shared/customer/customer.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
   ],
   providers: [
     ShoppingCartService,
-    ProductRepositoryService
+    ProductRepositoryService,
+    CustomerService
   ],
   bootstrap: [AppComponent]
 })

@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import {ShoppingCartService} from "./shared/shoppingcart/shoppingcart.service";
 import {ShoppingCartComponent} from "./shared/shoppingcart/shoppingcart.component";
+import {CustomerService} from "./shared/customer/customer.service";
 
 @Component({
   selector: 'app-root',
@@ -19,10 +20,10 @@ import {ShoppingCartComponent} from "./shared/shoppingcart/shoppingcart.componen
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public constructor(protected shoppingCartService: ShoppingCartService,
-                     protected renderer: Renderer2) {
+                     protected renderer: Renderer2,
+                     protected customerService: CustomerService) {
   }
 
-  title = 'Tu Mascota';
 
   @ViewChild("shoppingcart", {static: false})
   shoppingCartComponent: ShoppingCartComponent;
@@ -32,7 +33,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public showShoppingCartContentFromParent() {
     this.shoppingCartComponent.showShoppingCartDetails();
+
   }
+
+
+  title = 'Tu Mascota';
+  customer = {}
 
   ngOnInit(): void {
     console.log("Init")

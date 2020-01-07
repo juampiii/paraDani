@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CustomerService} from "../shared/customer/customer.service";
 
 @Component({
   selector: 'app-checkout',
@@ -7,16 +8,17 @@ import { Component } from '@angular/core';
 })
 export class CheckoutComponent  {
 
-  constructor() { }
+  constructor(protected customerService:CustomerService) { }
 
   onSubmit(f) {
-    console.log(f);
+
+      this.customerService.setCustomer(f.form.value)
   }
 
   public name;
   public lastname;
   public address;
-  public address2;
+  public email;
   public city;
   public postalcode;
 public gridCheck;

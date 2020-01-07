@@ -4,7 +4,7 @@
       <div class="col-10">
         <a [routerLink]="['/']"><h1>{{title}}</h1></a>
         <a [routerLink]="['/checkout']"><h1>Checkout</h1></a>
-
+        <p *ngIf="customer != null">{{customer.inputName}}</p>
 
       </div>
       <div class="col-2" #shoppingcartcontainer>
