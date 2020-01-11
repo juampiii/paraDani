@@ -1,38 +1,24 @@
 import {Injectable} from "@angular/core";
+import {HttpClient, HttpParams} from "@angular/common/http";
 
 @Injectable()
-export class ProductRepositoryService{
-  protected products = [
-    {
-      "id":"pienso-perros",
-      "name": "Pienso de perros",
-      "description": "Pienso vegano para perros pequeños",
-      "price": 15
-    },
-    {
-      "id":"collar-perros",
-      "name": "Collar para perros",
-      "description": "Collar antiparasitario",
-      "price": 8
-    },
-    {
-      "id":"cepillo-gatos",
-      "name": "Cepillo para gatos",
-      "description": "Cepillo suave y eficaz",
-      "price": 20
-    },
-    {
-      "id":"antiestaminico-gatos",
-      "name": "Antiestamínico para gatos",
-      "description": "Anula los efectos de la alergia en otros gatos",
-      "price": 30
-    }]
+export class ProductRepositoryService {
 
-  public findAll(){
-    return this.products;
+  public constructor(protected httpClient: HttpClient) {
   }
 
-  public findById(productId: string){
-    return this.products.find(product => product.id == productId)
+  public findAll() {
+    // URL: http://localhost:3000/api/products
+
+    return this.httpClient.get("http://localhost:3000/api/products");
+  }
+
+  public findById(productId: string) {
+
+    return this.httpClient.get("http://localhost:3000/api/products/" + productId);
+  }
+
+  public save(product:any){
+    return this.httpClient.put("http://localhost:3000/api/products/", product);
   }
 }

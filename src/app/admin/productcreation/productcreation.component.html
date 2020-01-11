@@ -1,0 +1,22 @@
+<p>productcreation works!</p>
+
+<form [formGroup]="productEditionForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="id">Identificador</label>
+    <input type="text" class="form-control" id="id" formControlName="id" placeholder="id">
+  </div>
+  <div class="form-group">
+    <label for="name">Nombre del producto</label>
+    <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombre">
+  </div>
+  <div class="form-group">
+    <label for="description">Descripción</label>
+    <input type="text" class="form-control" id="description" formControlName="description" placeholder="Lorem Jamon">
+  </div>
+  <div class="form-group">
+    <label for="price">Precio</label>
+    <input type="number" class="form-control" id="price" formControlName="price" placeholder="price">
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg">Crear!</button>
+</form>

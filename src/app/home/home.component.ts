@@ -15,7 +15,10 @@ export class HomeComponent {
   public constructor(protected shoppingCartService: ShoppingCartService,
                      protected productRepositoryService: ProductRepositoryService) {
 
-    this.products = this.productRepositoryService.findAll()
+    this.productRepositoryService.findAll().subscribe((result:Array<any>) =>{
+      this.products = result;
+    })
+
   }
 
   public addProductToCart(product) {

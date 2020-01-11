@@ -11,6 +11,9 @@ import {ProductRepositoryService} from "./productRepository/productrepository.se
 import {AngularFontAwesomeModule} from "angular-font-awesome";
 import { CheckoutComponent } from './checkout/checkout.component';
 import {CustomerService} from "./shared/customer/customer.service";
+import {HttpClientModule} from "@angular/common/http";
+import { ProductcreationComponent } from './admin/productcreation/productcreation.component';
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import {CustomerService} from "./shared/customer/customer.service";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule,
+    AdminModule
   ],
   providers: [
     ShoppingCartService,

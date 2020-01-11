@@ -20,7 +20,10 @@ export class ProductsComponent implements OnDestroy{
     this.subscriptions.push(
     this.route.params.subscribe(param =>{
       let productId = param["productId"];
-        this.product = this.productRepositoryService.findById(productId);
+      this.productRepositoryService.findById(productId).subscribe(product =>{
+        this.product = product;
+      })
+
     }));
   }
 
